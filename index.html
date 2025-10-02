@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS → Tailwind CSS 逆引き検索</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div
+            class="container mx-auto p-8 bg-white rounded-lg shadow-lg max-w-2xl"
+        >
+            <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">
+                CSS → Tailwind CSS 逆引き検索
+            </h1>
+            <p>CSSを入力すると対応するtailwindを検索できます。検索後は「コピー」を押してtailwindをコピーできます。</p>
+
+            <!-- 入力欄 -->
+            <div class="relative">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="CSSを入力... (例: color: #ef4444;)"
+                    class="w-full p-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                />
+                <!-- 補完リスト -->
+                <ul
+                    id="suggestions"
+                    class="absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-40 overflow-auto hidden z-10"
+                ></ul>
+            </div>
+
+            <!-- 検索結果 -->
+            <div id="results" class="mt-6 space-y-4"></div>
+        </div>
+
+        <script src="tailwind-data.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
